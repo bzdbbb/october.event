@@ -27,7 +27,7 @@ fields:
 
   startDate:
     label: Start Date
-    type: bzdbbb\Event\FormWidgets\datepicker
+    type: bzdbbb\Event\FormWidgets\DatePicker
     placeholder: New post title
     span: left
 
@@ -38,7 +38,7 @@ fields:
 
   endDate:
     label: End Date
-    type: bzdbbb\Event\FormWidgets\datepicker
+    type: bzdbbb\Event\FormWidgets\DatePicker
     placeholder: New post title
     span: left
 
