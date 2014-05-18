@@ -1,4 +1,4 @@
-<?php namespace Bzdbbb\Event\FormWidgets;
+<?php namespace bzdbbb\Event\FormWidgets;
 
 use Backend\Classes\FormWidgetBase;
 

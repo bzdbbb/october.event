@@ -6,7 +6,7 @@
 list: @/plugins/bzdbbb/event/models/category/columns.yaml
 
 # Model Class name
-modelClass: Bzdbbb\Event\Models\Category
+modelClass: bzdbbb\Event\Models\Category
 
 # List Title
 title: Manage Categories

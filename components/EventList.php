@@ -1,7 +1,7 @@
-<?php namespace Bzdbbb\Event\Components;
+<?php namespace bzdbbb\Event\Components;
 
 use Cms\Classes\ComponentBase;
-use Bzdbbb\Event\Models\Event;
+use bzdbbb\Event\Models\Event;
 
 class EventList extends ComponentBase
 {

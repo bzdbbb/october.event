@@ -1,4 +1,4 @@
-<?php namespace Bzdbbb\Event\Controllers;
+<?php namespace bzdbbb\Event\Controllers;
 
 use BackendMenu;
 use Backend\Classes\Controller;
@@ -22,6 +22,6 @@ class Events extends Controller
     {
         parent::__construct();
 
-        BackendMenu::setContext('Bzdbbb.Event', 'event', 'events');
+        BackendMenu::setContext('bzdbbb.Event', 'event', 'events');
     }
 }

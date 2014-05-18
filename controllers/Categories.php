@@ -1,4 +1,4 @@
-<?php namespace Bzdbbb\Event\Controllers;
+<?php namespace bzdbbb\Event\Controllers;
 
 use BackendMenu;
 use Backend\Classes\Controller;
@@ -20,6 +20,6 @@ class Categories extends Controller
     {
         parent::__construct();
 
-        BackendMenu::setContext('Bzdbbb.Event', 'event', 'categories');
+        BackendMenu::setContext('bzdbbb.Event', 'event', 'categories');
     }
 }

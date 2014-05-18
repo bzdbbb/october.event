@@ -1,4 +1,4 @@
-<?php namespace Bzdbbb\Event\Models;
+<?php namespace bzdbbb\Event\Models;
 
 use Model;
 
@@ -34,7 +34,7 @@ class Event extends Model
     public $hasOne = [];
     public $hasMany = [];
     public $belongsTo = [
-        'category' => ['Bzdbbb\Event\Models\Category']
+        'category' => ['bzdbbb\Event\Models\Category']
     ];
     public $belongsToMany = [];
     public $morphTo = [];

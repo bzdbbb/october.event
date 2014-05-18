@@ -1,4 +1,4 @@
-<?php namespace Bzdbbb\Event\Models;
+<?php namespace bzdbbb\Event\Models;
 
 use Model;
 

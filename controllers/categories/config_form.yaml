@@ -9,7 +9,7 @@ name: Category
 form: @/plugins/bzdbbb/event/models/category/fields.yaml
 
 # Model Class name
-modelClass: Bzdbbb\Event\Models\Category
+modelClass: bzdbbb\Event\Models\Category
 
 # Default redirect location
 defaultRedirect: bzdbbb/event/categories

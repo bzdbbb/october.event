@@ -1,4 +1,4 @@
-<?php namespace Bzdbbb\Event\Updates;
+<?php namespace bzdbbb\Event\Updates;
 
 use Schema;
 use October\Rain\Database\Updates\Migration;

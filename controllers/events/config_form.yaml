@@ -9,7 +9,7 @@ name: Event
 form: @/plugins/bzdbbb/event/models/event/fields.yaml
 
 # Model Class name
-modelClass: Bzdbbb\Event\Models\Event
+modelClass: bzdbbb\Event\Models\Event
 
 # Default redirect location
 defaultRedirect: bzdbbb/event/events

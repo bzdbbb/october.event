@@ -6,7 +6,7 @@
 list: @/plugins/bzdbbb/event/models/event/columns.yaml
 
 # Model Class name
-modelClass: Bzdbbb\Event\Models\Event
+modelClass: bzdbbb\Event\Models\Event
 
 # List Title
 title: Manage Events

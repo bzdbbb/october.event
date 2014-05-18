@@ -1,4 +1,4 @@
-<?php namespace Bzdbbb\Event;
+<?php namespace bzdbbb\Event;
 
 use Backend;
 use Controller;
@@ -57,7 +57,7 @@ class Plugin extends PluginBase
     public function registerFormWidgets()
     {
         return [
-            'Bzdbbb\Event\FormWidgets\DatePicker' => [
+            'bzdbbb\Event\FormWidgets\DatePicker' => [
                 'label' => 'DatePicker',
                 'alias' => 'datePicker'
             ]
@@ -68,7 +68,7 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
-            '\Bzdbbb\Event\Components\EventList' => 'eventList'
+            '\bzdbbb\Event\Components\EventList' => 'eventList'
         ];
     }    
 
