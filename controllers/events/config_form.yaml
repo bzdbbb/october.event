@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Event
+
+# Model Form Field configuration
+form: @/plugins/bzdbbb/event/models/event/fields.yaml
+
+# Model Class name
+modelClass: Bzdbbb\Event\Models\Event
+
+# Default redirect location
+defaultRedirect: bzdbbb/event/events
+
+# Create page
+create:
+    title: Create Events
+    redirect: bzdbbb/event/events/update/:id
+    redirectClose: bzdbbb/event/events
+
+# Update page
+update:
+    title: Edit Events
+    redirect: bzdbbb/event/events
+    redirectClose: bzdbbb/event/events
+
+# Preview page
+preview:
+    title: Preview Events

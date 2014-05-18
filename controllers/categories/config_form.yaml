@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Category
+
+# Model Form Field configuration
+form: @/plugins/bzdbbb/event/models/category/fields.yaml
+
+# Model Class name
+modelClass: Bzdbbb\Event\Models\Category
+
+# Default redirect location
+defaultRedirect: bzdbbb/event/categories
+
+# Create page
+create:
+    title: Create Category
+    redirect: bzdbbb/event/categories/update/:id
+    redirectClose: bzdbbb/event/categories
+
+# Update page
+update:
+    title: Edit Category
+    redirect: bzdbbb/event/categories
+    redirectClose: bzdbbb/event/categories
+
+# Preview page
+preview:
+    title: Preview Category

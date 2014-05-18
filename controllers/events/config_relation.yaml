@@ -1,0 +1,10 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+category:
+    label: State
+    list: @/plugins/bzdbbb/event/models/category/columns.yaml
+    form: @/plugins/bzdbbb/event/models/category/fields.yaml
+    # toolbar:
+    #     buttons: relation_toolbar

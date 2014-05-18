@@ -1,0 +1,4 @@
+1.0.4:
+    - Initialize plugin
+    - create_categories_table.php
+    - create_events_table.php

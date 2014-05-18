@@ -1,0 +1,16 @@
+<h3>Coming Soon:</h3>
+
+<ul class="list-group">
+	{% for item in __SELF__.events %}
+	    <li class="list-group-item clearfix">
+	    	<div class="col-md-3">
+		    	<img src='{{ item.photo }}'/>
+		    </div>
+		    <div class="col-md-9">
+		    	<p>{{ item.summary }}</p>
+		    	<p>{{ item.startDate|date("d/m/Y") }}</p>
+		    	<p>{{ item.location }}</p>
+		    </div>
+	    </li>
+	{% endfor %}
+</ul>

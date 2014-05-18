@@ -1,0 +1,67 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+
+  summary:
+    label: Name
+    placeholder: Super Event
+    span: left
+
+  description:
+    label: Description
+    placeholder: New post title
+    type: textarea
+    span: right
+
+  url:
+    label: Url
+    placeholder: URLs
+    span: left
+
+  location:
+    label: Location
+    placeholder: New post title
+    span: left  
+
+  startDate:
+    label: Start Date
+    type: Bzdbbb\Event\FormWidgets\datepicker
+    placeholder: New post title
+    span: left
+
+  category:
+    label: Event Category
+    type: relation
+    span: right
+
+  endDate:
+    label: End Date
+    type: Bzdbbb\Event\FormWidgets\datepicker
+    placeholder: New post title
+    span: left
+
+  photo:
+    label: Photo
+    type: fileupload
+    span: right
+    options:
+      mode: image
+      image-height: 260
+      image-width: 260
+
+  duration:
+    label: duration
+    placeholder: New post title
+    span: left
+
+  latitude:
+    label: latitude
+    placeholder: New post title
+    span: left
+
+  longitude:
+    label: longitude
+    placeholder: New post title
+    span: left
