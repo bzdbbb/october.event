@@ -4,10 +4,10 @@
 	{% for item in __SELF__.events %}
 	    <li class="list-group-item clearfix">
 	    	<div class="col-md-3">
-		    	<img src='{{ item.photo }}'/>
+		    	<img width='100%' src='{{ item.photo.path }}'/>
 		    </div>
 		    <div class="col-md-9">
-		    	<p>{{ item.summary }}</p>
+		    	<p>{{ item.summary }} - {{ item.category.name }}</p>
 		    	<p>{{ item.startDate|date("d/m/Y") }}</p>
 		    	<p>{{ item.location }}</p>
 		    </div>
