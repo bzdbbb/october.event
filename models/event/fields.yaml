@@ -12,7 +12,7 @@ fields:
   description:
     label: Description
     placeholder: New post title
-    type: textarea
+    type: richeditor
     span: right
 
   url:
