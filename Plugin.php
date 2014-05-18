@@ -60,6 +60,10 @@ class Plugin extends PluginBase
             'bzdbbb\Event\FormWidgets\DatePicker' => [
                 'label' => 'DatePicker',
                 'alias' => 'datePicker'
+            ],
+            'bzdbbb\Event\FormWidgets\MapPicker' => [
+                'label' => 'MapPicker',
+                'alias' => 'mapPicker'
             ]
         ];
     }

@@ -1,0 +1,69 @@
+<div
+        id="<?= $this->getId() ?>"
+        class="field-mappicker"
+        data-control="mappicker">
+        <input
+            type="hidden"
+            id="<?= $this->getId('input') ?>"
+            name="<?= $name ?>"
+            value="<?= $value ?>">
+    </div>
+
+<?php if ($this->hostmap): ?>
+
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+<script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+<style>
+#map { height: 180px; }
+</style>
+<div id="map" style="width: 600px; height: 400px"></div>    
+
+ <script>
+
+        var map = L.map('map').setView([51.505, -0.09], 13);
+
+        L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+                '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+            id: 'examples.map-i86knfo3'
+        }).addTo(map);
+
+
+        var marker = L.marker([51.5, -0.09]).addTo(map)
+            .bindPopup("<b>Hello world!</b><br />I am a popup.")
+
+        var popup = L.popup();
+
+        function onMapClick(e) {
+            marker
+                .setLatLng(e.latlng)
+                .bindPopup("You clicked the map at " + e.latlng.toString()).openPopup();
+            console.log(e.latlng);            
+        }
+
+        map.on('click', onMapClick);
+
+        window.controls = {};
+        window.controls.map = map;
+
+    </script>
+
+<?php endif ?>
+
+ <script>
+
+        window.controls.map.on('click', function(e) {
+            if('<?= $bind ?>' === 'latitude')
+            {
+                $("#<?= $this->getId('input') ?>").val(e.latlng.lat);
+            }
+            else
+            {
+                $("#<?= $this->getId('input') ?>").val(e.latlng.lng);
+            }            
+        });
+
+
+  </script>

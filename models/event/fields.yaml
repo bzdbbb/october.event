@@ -57,11 +57,20 @@ fields:
     span: left
 
   latitude:
-    label: latitude
+    label: Location
+    type: bzdbbb\Event\FormWidgets\MapPicker
+    options:    
+      hostmap: true
+      mapid: latlongmap
+      bind: latitude
     placeholder: New post title
     span: left
 
   longitude:
-    label: longitude
+    type: bzdbbb\Event\FormWidgets\MapPicker
     placeholder: New post title
+    options:
+      hostmap: false
+      mapid: latlongmap
+      bind: longitude
     span: left
