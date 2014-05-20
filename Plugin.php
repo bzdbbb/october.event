@@ -74,6 +74,15 @@ class Plugin extends PluginBase
         return [
             '\bzdbbb\Event\Components\EventList' => 'eventList'
         ];
-    }    
+    }
+
+    public function registerMarkupTags()
+    {
+        return [
+            'filters' => [
+                'event' => ['bzdbbb\Event\Classes\EventManager', 'GetQualityFromId']
+            ]
+        ];
+    }
 
 }
