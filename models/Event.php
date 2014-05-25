@@ -18,6 +18,8 @@ class Event extends Model
      */
     protected $guarded = ['*'];
 
+    protected $purgeable = ['maplocation'];
+
     /**
      * @var array Fillable fields
      */
@@ -44,5 +46,4 @@ class Event extends Model
         'photo' => ['System\Models\File']
     ];
     public $attachMany = [];
-
 }

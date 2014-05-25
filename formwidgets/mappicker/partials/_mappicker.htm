@@ -5,8 +5,8 @@
 </style>
 <div id="<?= $this->getId() ?>" class="field-mappicker" data-control="mappicker">
 
-        <input type="hidden" id="<?= $this->getId('input') ?>_lat" name="<?= $lat ?>" value="<?= $lat_value ?>">
-        <input type="hidden" id="<?= $this->getId('input') ?>_lng" name="<?= $lng ?>" value="<?= $lng_value ?>">
+        <input type="hidden" id="<?= $this->getId('input') ?>_lat" name="Event[<?= $lat ?>]" value="<?= $lat_value ?>">
+        <input type="hidden" id="<?= $this->getId('input') ?>_lng" name="Event[<?= $lng ?>]" value="<?= $lng_value ?>">
 
         <div id="<?= $this->getId('input') ?>_map" style="width: 600px; height: 400px"></div>    
 
