@@ -80,7 +80,8 @@ class Plugin extends PluginBase
     {
         return [
             'filters' => [
-                'event' => ['bzdbbb\Event\Classes\EventManager', 'GetQualityFromId']
+                'event' => ['bzdbbb\Event\Classes\EventManager', 'GetQualityFromId'],
+                'event_meta' => ['bzdbbb\Event\Classes\EventManager', 'GetQualityFromId']
             ]
         ];
     }

@@ -34,7 +34,7 @@ class Event extends Model
     public $hasOne = [];
     public $hasMany = [];
     public $belongsTo = [
-        'category' => ['bzdbbb\Event\Models\Category']
+        'category' => ['bzdbbb\Event\Models\Category'],
     ];
     public $belongsToMany = [];
     public $morphTo = [];

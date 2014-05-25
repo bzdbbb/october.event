@@ -21,8 +21,8 @@ class MapPicker extends FormWidgetBase
      */
     public function init()
     {
-        $this->hostmap = $this->getConfig('hostmap', false);  
-        $this->bind = $this->getConfig('bind', 'latitude');  
+        $this->lat = $this->getConfig('lat', '');  
+        $this->lng = $this->getConfig('lng', '');  
     }
 
     /**
@@ -30,14 +30,15 @@ class MapPicker extends FormWidgetBase
      */
     public function render()
     {
-        $this->vars['hostmap'] = $this->hostmap;
-        $this->vars['name'] = $this->formField->getName();
+        $this->vars['lat'] = $this->lat;
+        $this->vars['lng'] = $this->lng;
 
-        $value = $this->model->{$this->columnName};
-        $this->vars['value'] = $value ?: '';
+        $lat_value = $this->model->{$this->lat};
+        $this->vars['lat_value'] = $lat_value ?: '';
 
-        $this->vars['bind'] = $this->bind;
-        
+        $lng_value = $this->model->{$this->lng};
+        $this->vars['lng_value'] = $lng_value ?: '';
+      
         return $this->makePartial('mappicker');
     }
 

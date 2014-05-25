@@ -9,68 +9,77 @@ fields:
     placeholder: Super Event
     span: left
 
-  description:
-    label: Description
-    placeholder: New post title
-    type: richeditor
-    span: right
+  toolbar:
+    type: partial
+    path: event_toolbar
+    cssClass: collapse-visible
 
-  url:
-    label: Url
-    placeholder: URLs
-    span: left
+secondaryTabs:
+  stretch: true
+  fields:
 
-  location:
-    label: Location
-    placeholder: New post title
-    span: left  
+    photo:
+      tab: General
+      label: Photo
+      type: fileupload
+      span: right
+      options:
+        mode: image
+        image-height: 260
+        image-width: 260
 
-  startDate:
-    label: Start Date
-    type: bzdbbb\Event\FormWidgets\DatePicker
-    placeholder: New post title
-    span: left
+    description:
+      tab: General
+      label: Description
+      placeholder: New post title
+      type: richeditor
+      span: left
+    url:
+      tab: General
+      label: Url
+      placeholder: URLs
+      span: left
 
-  category:
-    label: Event Category
-    type: relation
-    span: right
+    location:
+      tab: Where
+      label: Location
+      placeholder: New post title
+      span: left  
 
-  endDate:
-    label: End Date
-    type: bzdbbb\Event\FormWidgets\DatePicker
-    placeholder: New post title
-    span: left
+    startDate:
+      tab: When
+      label: Start Date
+      type: bzdbbb\Event\FormWidgets\DatePicker
+      placeholder: New post title
+      span: left
 
-  photo:
-    label: Photo
-    type: fileupload
-    span: right
-    options:
-      mode: image
-      image-height: 260
-      image-width: 260
+    category:
+      tab: General
+      label: Event Category
+      type: relation
+      span: left
 
-  duration:
-    label: duration
-    placeholder: New post title
-    span: left
+    endDate:
+      tab: When
+      label: End Date
+      type: bzdbbb\Event\FormWidgets\DatePicker
+      placeholder: New post title
+      span: left
 
-  latitude:
-    label: Location
-    type: bzdbbb\Event\FormWidgets\MapPicker
-    options:    
-      hostmap: true
-      mapid: latlongmap
-      bind: latitude
-    placeholder: New post title
-    span: left
+    duration:
+      tab: When
+      label: duration
+      placeholder: New post title
+      span: left
 
-  longitude:
-    type: bzdbbb\Event\FormWidgets\MapPicker
-    placeholder: New post title
-    options:
-      hostmap: false
-      mapid: latlongmap
-      bind: longitude
-    span: left
+    maplocation:
+      tab: Where
+      stretch: true
+      label: Location
+      type: bzdbbb\Event\FormWidgets\MapPicker
+      fields: |
+        latitude
+        longitude
+      options:
+        lat: latitude
+        lng: longitude
