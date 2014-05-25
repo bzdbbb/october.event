@@ -53,7 +53,7 @@ secondaryTabs:
       placeholder: New post title
       span: left
 
-    category:
+    categories:
       tab: General
       label: Event Category
       type: relation

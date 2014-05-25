@@ -34,12 +34,19 @@ class MapPicker extends FormWidgetBase
         $this->vars['lng'] = $this->lng;
 
         $lat_value = $this->model->{$this->lat};
-        $this->vars['lat_value'] = $lat_value ?: '';
+        $this->vars['lat_value'] = $lat_value ?: '51';
 
         $lng_value = $this->model->{$this->lng};
-        $this->vars['lng_value'] = $lng_value ?: '';
+        $this->vars['lng_value'] = $lng_value ?: '-0.6';
       
         return $this->makePartial('mappicker');
+    }
+
+    public function loadAssets()
+    {
+        $this->addCss('vendor/leaflet/leaflet.css');
+        $this->addCss('css/mappicker.css');
+        $this->addJs('vendor/leaflet/leaflet.js');
     }
 
     /**

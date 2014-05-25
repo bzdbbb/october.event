@@ -20,6 +20,7 @@ class Event extends Model
 
     protected $purgeable = ['maplocation'];
 
+    protected $dates = ['startDate','endDate'];
     /**
      * @var array Fillable fields
      */
@@ -35,10 +36,12 @@ class Event extends Model
      */
     public $hasOne = [];
     public $hasMany = [];
-    public $belongsTo = [
-        'category' => ['bzdbbb\Event\Models\Category'],
+    public $belongsTo = [];
+    
+    public $belongsToMany = [
+        'categories' => ['bzdbbb\Event\Models\Category', 'table' => 'bzdbbb_event_events_categories', 'order' => 'name']
     ];
-    public $belongsToMany = [];
+
     public $morphTo = [];
     public $morphOne = [];
     public $morphMany = [];

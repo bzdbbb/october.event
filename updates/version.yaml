@@ -1,4 +1,5 @@
-1.0.4:
-    - Initialize plugin
-    - create_categories_table.php
+1.0.7:
+    - Initialize plugin    
     - create_events_table.php
+    - create_categories_table.php
+    - seed_all_tables.php

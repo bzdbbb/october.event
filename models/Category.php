@@ -1,6 +1,7 @@
 <?php namespace bzdbbb\Event\Models;
 
 use Model;
+use Str;
 
 /**
  * Category Model
@@ -26,13 +27,26 @@ class Category extends Model
     /**
      * @var array Validation rules
      */
-    public $rules = [];
+    public $rules = [
+        'name' => 'required',
+        'slug' => 'required|between:3,64|unique:bzdbbb_event_categories',
+        'code' => 'unique:bzdbbb_event_categories',
+    ];
+
+    public function beforeValidate()
+    {
+        // Generate a URL slug for this model
+        if (!$this->exists && !$this->slug)
+            $this->slug = Str::slug($this->name);
+    }
 
     /**
      * @var array Relations
      */
     public $hasOne = [];
-    public $hasMany = [];
+    public $hasMany = [
+        'event' => ['bzdbbb\Event\Models\Event'],
+    ];
     public $belongsTo = [];
     public $belongsToMany = [];
     public $morphTo = [];
