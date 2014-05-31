@@ -32,7 +32,7 @@ secondaryTabs:
       tab: General
       label: Description
       placeholder: New post title
-      type: richeditor
+      type: Eein\Wysiwyg\FormWidgets\Trumbowyg
       span: left
     url:
       tab: General

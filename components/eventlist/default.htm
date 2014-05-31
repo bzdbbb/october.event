@@ -1,18 +1,22 @@
 <h3>Coming Soon:</h3>
-
-<ul class="list-group">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<ul class="list-group event-list">
 	{% for item in __SELF__.events %}
-	    <li class="list-group-item clearfix">
-	    	<a href="/event/{{ item.id }}">
+	    <li class="list-group-item clearfix event-card" data-event-id='{{ item.id }}'>
 	    	<div class="col-md-3">
 		    	<img width='100%' src='{{ item.photo.path }}'/>
-		    </div>
-		    <div class="col-md-9">
-		    	<p>{{ item.summary }} - {{ item.category.name }}</p>
-		    	<p>{{ item.startDate|date("d/m/Y") }}</p>
-		    	<p>{{ item.location }}</p>
-		    </div>
-		   </a>
+		</div>
+		<div class="col-md-9">
+		    <p>{{ item.summary }}</p>
+		    <p>{{ item.startDate|date("d/m/Y") }}</p>
+		    <p>{{ item.location }}</p>
+		</div>
 	    </li>
 	{% endfor %}
 </ul>
+
+<script type='text/javascript'>
+	$(".event-list .event-card").click(function() {
+		window.location = "{{__SELF__.getRoute}}/" + $(this).attr("data-event-id");
+	});
+</script>

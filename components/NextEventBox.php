@@ -4,13 +4,13 @@ use Cms\Classes\ComponentBase;
 use bzdbbb\Event\Models\Event;
 use DB as Db;
 
-class EventList extends ComponentBase
+class NextEventBox extends ComponentBase
 {
 
     public function componentDetails()
     {
         return [
-            'name'        => 'EventList Component',
+            'name'        => 'NextEventBox Component',
             'description' => 'No description provided yet...'
         ];
     }
@@ -47,13 +47,24 @@ class EventList extends ComponentBase
         $this->addCss('/plugins/bzdbbb/event/components/eventlist/assets/less/eventList.css');
     }
 
-    public function events()
+    public function event()
     {
-        return Event::all();
+        $event = Event::whereHas('categories', function($q)
+        {
+            $q->where('name', '=', 'Ceilidh');
+
+        })->orderBy('startDate')->first();
+        return $event;
     }
 
     public function getRoute()
     {
         return $this->property('route');
+    }
+
+    public function getNothingOn()
+    {
+        $template = "Nothing on :(";
+        return $template;
     }
 }

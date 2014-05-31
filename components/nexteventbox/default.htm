@@ -1,0 +1,24 @@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+{% if __SELF__.event == null %}
+	{{ __SELF__.getNothingOn }}
+{% else %}
+<ul class="list-group event-list">
+	    <li class="list-group-item clearfix event-card" data-event-id='{{ __SELF__.event.id }}'>
+	    	<div class="col-md-3">
+		    	<img width='100%' src='{{ __SELF__.event.photo.path }}'/>
+		</div>
+		<div class="col-md-9">
+		    <p>{{ __SELF__.event.summary }}</p>
+		    <p>{{ __SELF__.event.startDate|date("d/m/Y") }}</p>
+		    <p>{{ __SELF__.event.location }}</p>
+		</div>
+	    </li>
+</ul>
+{% endif %}
+
+<script type='text/javascript'>
+	$(".event-list .event-card").click(function() {
+		window.location = "{{__SELF__.getRoute}}/" + $(this).attr("data-event-id");
+	});
+</script>

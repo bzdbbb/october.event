@@ -72,7 +72,8 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
-            '\bzdbbb\Event\Components\EventList' => 'eventList'
+            '\bzdbbb\Event\Components\EventList' => 'eventList',
+            '\bzdbbb\Event\Components\NextEventBox' => 'nextEventBox',
         ];
     }
 
@@ -81,7 +82,7 @@ class Plugin extends PluginBase
         return [
             'filters' => [
                 'event' => ['bzdbbb\Event\Classes\EventManager', 'GetQualityFromId'],
-                'event_meta' => ['bzdbbb\Event\Classes\EventManager', 'GetQualityFromId']
+                'microdata' => ['bzdbbb\Event\Classes\EventManager', 'GetMicroData']
             ]
         ];
     }
