@@ -1,4 +1,5 @@
-<?php namespace bzdbbb\Event;
+<?php 
+namespace bzdbbb\Event;
 
 use Backend;
 use Controller;
@@ -74,6 +75,7 @@ class Plugin extends PluginBase
         return [
             '\bzdbbb\Event\Components\EventList' => 'eventList',
             '\bzdbbb\Event\Components\NextEventBox' => 'nextEventBox',
+            '\bzdbbb\Event\Components\Calendar' => 'calendar'
         ];
     }
 
