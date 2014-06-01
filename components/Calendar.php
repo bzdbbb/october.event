@@ -1,19 +1,16 @@
 <?php namespace bzdbbb\Event\Components;
 
-require 'vendor/autoload.php';
-
 use Cms\Classes\ComponentBase;
 use bzdbbb\Event\Models\Event;
 use DB as Db;
-use lessc as LessC;
 
-class EventList extends ComponentBase
+class Calendar extends ComponentBase
 {
 
     public function componentDetails()
     {
         return [
-            'name'        => 'EventList Component',
+            'name'        => 'Calendar Component',
             'description' => 'No description provided yet...'
         ];
     }
@@ -47,18 +44,34 @@ class EventList extends ComponentBase
 
     public function onRun()
     {
-        $less = new lessc;
-        $less->checkedCompile("plugins/bzdbbb/event/components/eventlist/assets/less/eventList.less", "plugins/bzdbbb/event/components/eventlist/assets/css/eventList.css");
-        $this->addCss('/plugins/bzdbbb/event/components/eventlist/assets/css/eventList.css');
+        $this->addJs('/plugins/bzdbbb/event/assets/jquery/jquery.js');
+        $this->addJs('/plugins/bzdbbb/event/assets/underscore/underscore.js');
+        $this->addJs('/plugins/bzdbbb/event/assets/bootstrap-calendar/js/calendar.js');
+        $this->addJs('/plugins/bzdbbb/event/assets/bootstrap/dist/js/bootstrap.js');
+
+        $this->addJs('/plugins/bzdbbb/event/components/calendar/assets/js/app.js');
+
+        $this->addCss('/plugins/bzdbbb/event/assets/bootstrap-calendar/css/calendar.css');
     }
 
-    public function events()
+    public function event()
     {
-        return Event::all();
+        $event = Event::whereHas('categories', function($q)
+        {
+            $q->where('name', '=', 'Ceilidh');
+
+        })->orderBy('startDate')->first();
+        return $event;
     }
 
     public function getRoute()
     {
         return $this->property('route');
+    }
+
+    public function getNothingOn()
+    {
+        $template = "Nothing on :(";
+        return $template;
     }
 }

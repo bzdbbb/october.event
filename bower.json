@@ -1,0 +1,13 @@
+{
+  "name": "my-project",
+  "version": "0.0.1",
+  "dependencies": {
+    "bootstrap": "3.0.0"
+  },
+  "devDependencies": {
+    "bootstrap-calendar": "~0.2.3"
+  },
+  "resolutions": {
+    "bootstrap": "3.0.0"
+  }
+}
