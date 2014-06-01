@@ -48,6 +48,9 @@ class Calendar extends ComponentBase
         $this->addJs('/plugins/bzdbbb/event/assets/underscore/underscore.js');
         $this->addJs('/plugins/bzdbbb/event/assets/bootstrap-calendar/js/calendar.js');
         $this->addJs('/plugins/bzdbbb/event/assets/bootstrap/dist/js/bootstrap.js');
+        $this->addJs('/plugins/bzdbbb/event/assets/moment/moment.js');
+
+        $this->addJs('/modules/system/assets/js/framework.js');
 
         $this->addJs('/plugins/bzdbbb/event/components/calendar/assets/js/app.js');
 
@@ -69,9 +72,21 @@ class Calendar extends ComponentBase
         return $this->property('route');
     }
 
-    public function getNothingOn()
+    public function mapEventToCalendarEvent($event)
     {
-        $template = "Nothing on :(";
-        return $template;
+        return [
+                "id" => $event["id"],
+                "title" => $event["summary"],
+                "url" => ("/event/" . $event["id"]),
+                "class" => "event-warning",
+                "start" => strtotime($event["startDate"]) * 1000,
+                "end" => strtotime($event["endDate"]) * 1000
+        ];
+    }
+
+    public function onGetEvents()
+    {
+        $events = Event::all()->toArray();
+        return array_map(array($this, 'mapEventToCalendarEvent'), $events);
     }
 }
